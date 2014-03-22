@@ -5,6 +5,7 @@ class PackagesController < ApplicationController
 
   def show
     @package = Package.find(params[:id])
-    @places = Place.all
+    package_id = "package_#{params[:id]}"
+    @places = Place.order(package_id => :desc)
   end
 end
