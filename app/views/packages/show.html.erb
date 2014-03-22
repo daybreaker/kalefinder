@@ -1,8 +1,11 @@
 <h1><%= @package.name %></h1>
 <p><%= @package.description %></p>
 
-<ul>
+<ol>
   <% @places.each do |place| %>
     <li><%= place.short_name %>
   <% end %>
-</ul>
+</ol>
+
+<div id="map-canvas" style="width: 300px; height: 300px;"/>
+
