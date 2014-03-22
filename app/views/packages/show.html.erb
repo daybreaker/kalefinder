@@ -9,3 +9,11 @@
 
 <div id="map-canvas" style="width: 300px; height: 300px;"/>
 
+<script>
+  heatMapPoints = [
+    <% @places.each do |place| %>
+      <%= "{ location: new google.maps.LatLng(#{place.lat}, #{place.long}), weight: #{place.score(@package)}}," %>
+    <% end %>
+  ];
+</script>
+

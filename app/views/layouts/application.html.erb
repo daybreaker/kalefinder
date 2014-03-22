@@ -5,7 +5,7 @@
   <title><%= @title || "Kalefinder" %></title>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyQ9sDh4UcAoAwG1v3Jrv4q9F_L2tGPY4&sensor=false"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyQ9sDh4UcAoAwG1v3Jrv4q9F_L2tGPY4&sensor=false&libraries=visualization"></script>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
