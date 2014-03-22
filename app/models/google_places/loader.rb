@@ -29,20 +29,20 @@ module GooglePlaces
                                                   key: key),
 
         food: GooglePlaces::RadarSearch.new(types: %w{food restraunt},
-                                                  key: key),
+                                            key: key),
 
         cocktail_bar: GooglePlaces::RadarSearch.new(types: %w{bar},
-                                                  keyword: 'cocktails',
-                                                  minprice: 3,
-                                                  key: key),
+                                                    keyword: 'cocktails',
+                                                    minprice: 3,
+                                                    key: key),
 
         bar: GooglePlaces::RadarSearch.new(types: %w{bar},
-                                                  key: key),
+                                           key: key),
 
         dive_bar: GooglePlaces::RadarSearch.new(types: %w{bar},
-                                                  keyword: 'dive bar',
-                                                  maxprice: 2,
-                                                  key: key),
+                                                keyword: 'dive bar',
+                                                maxprice: 2,
+                                                key: key),
 
         live_music: GooglePlaces::RadarSearch.new(types: %w{bar night_club},
                                                   keyword: 'live music',
@@ -56,16 +56,16 @@ module GooglePlaces
                                                 key: key),
 
         cafe: GooglePlaces::RadarSearch.new(types: %w{cafe},
-                                                key: key),
+                                            key: key),
 
         zoo: GooglePlaces::RadarSearch.new(types: %w{zoo},
-                                                key: key),
+                                           key: key),
 
         aquarium: GooglePlaces::RadarSearch.new(types: %w{aquarium},
                                                 key: key),
 
         museum: GooglePlaces::RadarSearch.new(types: %w{museum},
-                                                key: key),
+                                              key: key),
 
       }
     end
@@ -112,6 +112,7 @@ module GooglePlaces
 
         result = GooglePlaces::DetailsSearch.new(key: key, reference: place['reference']).search
         result['catagories'] = place['catagories']
+        result.delete('reviews') # we dont need this right now, just taking up space
         results << result
       end
 
