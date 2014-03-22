@@ -1,10 +1,12 @@
 class YelpScraper
   include Yelp::V2::Search::Request
-  attr_accessor :lat, :long, :city, :keyword, :client
+  attr_accessor :sw_lat, :sw_long, :ne_lat, :ne_long, :city, :keyword, :client
 
-  def initialize(lat: 29.9667, long: -90.0500, city:"New Orleans", keyword: nil)
-    @lat = lat
-    @long = long
+  def initialize(sw_lat:nil,sw_long:nil,ne_lat:nil,ne_long:nil, city:"New Orleans", keyword: nil)
+    @ne_lat = ne_lat
+    @ne_long = ne_long
+    @sw_lat = sw_lat
+    @sw_long = sw_long
     @city = city
     @keyword = keyword
     
@@ -18,10 +20,26 @@ class YelpScraper
   end
   # search for businesses via location (address, neighbourhood, city, state, zip, country, latitude, longitude)'
   def scrape
-    request = Location.new(
-              :term => keyword,
-              :city => city)
-    client.search(request)
+    request = BoundingBox.new(
+            :term => keyword,
+            :sw_latitude => sw_lat,
+            :sw_longitude => sw_long,
+            :ne_latitude => ne_lat,
+            :ne_longitude => ne_long,
+            :sort => 2)
+
+    request2 = BoundingBox.new(
+            :term => keyword,
+            :sw_latitude => sw_lat,
+            :sw_longitude => sw_long,
+            :ne_latitude => ne_lat,
+            :ne_longitude => ne_long,
+            :sort => 2,
+            :limit => 20,
+            :offset => 20)
+
+
+    [ client.search(request), client.search(request2) ]
   end
 
   def save_to(location)
