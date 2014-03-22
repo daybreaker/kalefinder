@@ -113,6 +113,7 @@ module GooglePlaces
         result = GooglePlaces::DetailsSearch.new(key: key, reference: place['reference']).search
         result['catagories'] = place['catagories']
         result.delete('reviews') # we dont need this right now, just taking up space
+        result.delete('adr_address')
         results << result
       end
 
@@ -125,7 +126,7 @@ module GooglePlaces
       places = populate_details transpose_results(run_searches)
 
       puts "Writing output to #{output}."
-      File.open(output, 'w') { |f| f.write JSON.pretty_generate(places) }
+      File.open(output, 'w') { |f| f.write JSON.dump(places) }
     end
   end
 end

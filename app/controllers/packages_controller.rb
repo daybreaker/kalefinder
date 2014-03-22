@@ -5,6 +5,6 @@ class PackagesController < ApplicationController
 
   def show
     @package = Package.find(params[:id])
-    @places = Place.for_package(@package)
+    @places =  Score.where(package_id: @package.id).flat_map(&:place)
   end
 end
