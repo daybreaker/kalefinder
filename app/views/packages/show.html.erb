@@ -1,0 +1,8 @@
+<h1><%= @package.name %></h1>
+<p><%= @package.description %></p>
+
+<ul>
+  <% @places.each do |place| %>
+    <li><%= place.short_name %>
+  <% end %>
+</ul>
