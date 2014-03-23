@@ -6,7 +6,7 @@ class Place < ActiveRecord::Base
   serialize :categories, Array
 
   def score(package)
-    scores.where(package_id: package.id).first.value
+    scores.where(package_id: package.id).first.value.to_f
   end
 
 end
