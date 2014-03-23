@@ -222,9 +222,20 @@
     margin-left: 0%;
     margin-top: 0px;
     width: 25%;
-    background-image:url("classy.jpg");
     background-size: cover;
     background-repeat: no-repeat no-repeat;
+
+    &.family-fun{
+    background-image:url("family-fun.jpg");
+    }
+
+    &.seersucker-special{
+      background-image:url("seersucker-special.jpg");
+    }
+
+    &.party-time{
+      background-image:url("party-time.jpg");
+    }
 }
 
 #groups-header {
@@ -240,6 +251,16 @@
     padding-left: 30px;
     font-family: open-sans;
     color: rgb(69, 69, 69);
+
+    a{
+      &:hover{
+        text-decoration: underline;
+        &:after {
+          position: absolute; /* Prevent underline of arrow */
+          padding-left:4px; /* Add a little space between text and arrow */
+          content: "\00bb"; /* Unicode hex for &raquo; */        }
+      }
+    }
 }
 
 #groups-paragraph {
