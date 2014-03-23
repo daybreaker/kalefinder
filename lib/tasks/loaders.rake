@@ -2,7 +2,8 @@ namespace :loaders do
   task :load_google_json, [:file] => :environment do |t, args|
     puts args[:file]
 
-    json_file = JSON.parse(IO.read(args[:file]))
+    json_file = JSON.load(open(args[:file]))
+
     puts json_file.length
 
     json_file.each do |place_json|
