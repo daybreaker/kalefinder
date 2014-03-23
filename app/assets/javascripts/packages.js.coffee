@@ -15,7 +15,8 @@ createHeatMap = (points) ->
 initialize = ->
   mapOptions =
     center: new google.maps.LatLng(29.951678, -90.098170),
-    zoom: 13
+    zoom: 13,
+    scrollwheel: false
 
   map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
   createHeatMap(heatMapPoints)
