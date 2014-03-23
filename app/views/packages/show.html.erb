@@ -1,18 +1,21 @@
-<h1><%= @package.name %></h1>
-<p><%= @package.description %></p>
+<div class="left-box">
+  <h1><%= @package.name %></h1>
+  <p><%= @package.description %></p>
 
-<ol>
-  <% @places.each do |place| %>
-    <li><%= place.short_name %>
-  <% end %>
-</ol>
-
-<div id="map-canvas" style="width: 800px; height: 400px;"/>
+  <div id="suggestions">
+    <ol>
+      <% @places[0..14].each do |place| %>
+        <li><%= place.short_name %>
+      <% end %>
+    </ol>
+  </div>
+</div>
+<div id="map-canvas" style="width: 700px; height: 500px; float: right;"/>
 
 <script>
   heatMapPoints = [
     <% @places.each do |place| %>
-      <%= "{ location: new google.maps.LatLng(#{place.lat}, #{place.long}), weight: #{place.score(@package)}}," %>
+      <%= "{ location: new google.maps.LatLng(#{place.lat}, #{place.long}), weight: #{10* place.score(@package)}}," %>
     <% end %>
   ];
 </script>
