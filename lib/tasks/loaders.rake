@@ -17,4 +17,15 @@ namespace :loaders do
       Place.create!(data)
     end
   end
+
+  task :load_yelp_json => :environment do |t|
+    json_file = JSON.parse(IO.read(Rails.root.to_s + "/public/yelp.json"))
+    puts json_file.length
+    
+    json_file.each do |category, places|
+      puts category
+      puts places.length
+      puts places.first.inspect
+    end
+  end
 end
