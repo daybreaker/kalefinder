@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
   #before_action :authenticate_user!
   #before_action :auth
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
+  before_action :set_place, only: [:show, :edit, :update, :destroy, :score]
 
   # GET /places
   # GET /places.json
@@ -61,6 +61,11 @@ class PlacesController < ApplicationController
       format.html { redirect_to places_url }
       format.json { head :no_content }
     end
+  end
+
+  def score
+    @place.scores.where(package_id: params[:package_id]).update_all(value: params.require(:score).permit(:value)[:value])
+    redirect_to edit_place_path(@place), notice: 'Score updated.'
   end
 
   private

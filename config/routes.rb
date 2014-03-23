@@ -7,7 +7,11 @@ Kalefinder::Application.routes.draw do
 
   devise_for :users
 
-  resources :places, :packages
+  resources :places do
+    put 'score/:package_id', action: :score, on: :member, as: 'score'
+  end
+
+  resources :packages
 
   namespace :admin do
     root "base#index"
