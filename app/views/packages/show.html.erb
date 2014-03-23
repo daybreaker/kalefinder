@@ -3,6 +3,7 @@
   <p><%= @package.description %></p>
 
   <div id="suggestions">
+    <h2>Our Top Suggestions</h2>
     <ol>
       <% @places[0..14].each do |place| %>
         <li><%= place.short_name %>
@@ -15,7 +16,7 @@
 <script>
   heatMapPoints = [
     <% @places.each do |place| %>
-      <%= "{ location: new google.maps.LatLng(#{place.lat}, #{place.long}), weight: #{10* place.score(@package)}}," %>
+      <%= "{ location: new google.maps.LatLng(#{place.lat}, #{place.long}), weight: #{place.score(@package)}}," %>
     <% end %>
   ];
 </script>

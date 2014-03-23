@@ -7,14 +7,15 @@ map = {} # make global
 
 createHeatMap = (points) ->
   heatmap = new google.maps.visualization.HeatmapLayer({
-    data: points
+    data: points,
+    radius: 12
   })
   heatmap.setMap(map)
 
 initialize = ->
   mapOptions =
-    center: new google.maps.LatLng(29.9667, -90.0500),
-    zoom: 12
+    center: new google.maps.LatLng(29.951678, -90.098170),
+    zoom: 13
 
   map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
   createHeatMap(heatMapPoints)

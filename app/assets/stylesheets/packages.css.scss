@@ -270,14 +270,64 @@
 }
 
 .left-box{
+  margin-left: 20px;
   width: 300px;
   display: inline-block;
   h1{
+    color: white;
     width: 300px;
+    padding-top:0;
+    padding-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
   p{
     width: 300px;
+    margin-top: 5px;
+    color:rgba(255, 255, 255, 0.45098);
   }
 }
 
+#suggestions{
+  h2{
+    font-size:24px;
+    font-style: italic;
+    color: white;
+  }
+  ol{
+    counter-reset:li; /* Initiate a counter */
+    margin-left:0; /* Remove the default left margin */
+    padding-left:0; /* Remove the default left padding */
+    li{
+      position:relative; /* Create a positioning context */
+      margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
+      padding:4px 8px; /* Add some spacing around the content */
+      list-style:none; /* Disable the normal item numbering */
+      border-top:4px solid #666;
+      background:#f6f6f6;
+      &:before{
+        content:counter(li); /* Use the counter as content */
+        counter-increment:li; /* Increment the counter by 1 */
+        /* Position and style the number */
+        position:absolute;
+        top:-4px;
+        left:-2em;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        box-sizing:border-box;
+        width:2em;
+        /* Some space between the number and the content in browsers that support
+           generated content but not positioning it (Camino 2 is one example) */
+        margin-right:8px;
+        padding:4px;
+        border-top:4px solid #666;
+        color:#fff;
+        background:#666;
+        font-weight:bold;
+        font-family:"Helvetica Neue", Arial, sans-serif;
+        text-align:center;
+      }
+    }
+  }
+}
 
