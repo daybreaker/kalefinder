@@ -3,14 +3,11 @@ Kalefinder::Application.routes.draw do
   #get "home", to: "pages#home", as: "home"
   #get "inside", to: "pages#inside", as: "inside"
 
-  root "packages#new"
-
-  get 'packages/', to: 'packages#new'
-  get 'packages/:id', to: 'packages#show', as: 'package'
+  root "packages#index"
 
   devise_for :users
 
-  resources :places
+  resources :places, :packages
 
   namespace :admin do
     root "base#index"
