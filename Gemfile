@@ -8,6 +8,7 @@ gem 'jquery-rails', '~> 3.0.4'
 gem 'jbuilder', '~> 1.5.3'
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'yelpster'
+gem 'pundit', '~> 0.2.2'
 
 group :doc do
   gem 'sdoc', require: false

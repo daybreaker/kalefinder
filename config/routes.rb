@@ -10,6 +10,8 @@ Kalefinder::Application.routes.draw do
 
   devise_for :users
 
+  resources :places
+
   namespace :admin do
     root "base#index"
     resources :users
