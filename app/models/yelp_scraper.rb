@@ -41,8 +41,4 @@ class YelpScraper
 
     [ client.search(request), client.search(request2) ]
   end
-
-  def save_to(location)
-
-  end
 end
