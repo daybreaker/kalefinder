@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140322032955) do
+ActiveRecord::Schema.define(version: 20140322223442) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -39,12 +39,15 @@ ActiveRecord::Schema.define(version: 20140322032955) do
     t.float    "long"
     t.string   "short_name"
     t.string   "address"
-    t.float    "package_1"
-    t.float    "package_2"
-    t.float    "package_3"
-    t.float    "package_4"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "categories"
+  end
+
+  create_table "scores", id: false, force: true do |t|
+    t.integer "package_id"
+    t.integer "place_id"
+    t.float   "value"
   end
 
   create_table "users", force: true do |t|
