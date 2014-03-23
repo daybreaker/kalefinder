@@ -2,5 +2,15 @@
 
 <%= render 'form' %>
 
+<% @place.scores.each do |score| %>
+  <% if score.package %>
+    <%= form_for score, url: score_place_path(@place, score.package_id), method: :put do |f| %>
+      <%= f.label "#{score.package.name}'s score" %>
+      <%= f.text_field :value %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
+<% end %>
+
 <%= link_to 'Show', @place %> |
 <%= link_to 'Back', places_path %>
