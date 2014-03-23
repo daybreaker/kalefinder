@@ -25,7 +25,7 @@ module GooglePlaces
                                                   key: key),
 
         cheap_food: GooglePlaces::RadarSearch.new(types: %w{food restraunt},
-                                                  maxprice: 2,
+                                                  maxprice: 1,
                                                   key: key),
 
         food: GooglePlaces::RadarSearch.new(types: %w{food restraunt},
@@ -33,7 +33,7 @@ module GooglePlaces
 
         cocktail_bar: GooglePlaces::RadarSearch.new(types: %w{bar},
                                                     keyword: 'cocktails',
-                                                    minprice: 3,
+                                                    minprice: 2,
                                                     key: key),
 
         bar: GooglePlaces::RadarSearch.new(types: %w{bar},
@@ -41,7 +41,7 @@ module GooglePlaces
 
         dive_bar: GooglePlaces::RadarSearch.new(types: %w{bar},
                                                 keyword: 'dive bar',
-                                                maxprice: 2,
+                                                maxprice: 1,
                                                 key: key),
 
         live_music: GooglePlaces::RadarSearch.new(types: %w{bar night_club},
