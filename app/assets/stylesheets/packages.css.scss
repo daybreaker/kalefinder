@@ -11,7 +11,13 @@
     margin-right: auto;
     min-height: 100%;
     width: 100%;
-    background-color: rgb(153, 86, 56);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyYWRpYWxHcmFkaWVudCBpZD0iZyI+PHN0b3Agb2Zmc2V0PSIwLjA4NDUiIHN0b3AtY29sb3I9IiNGQ0Y5RTQiLz48c3RvcCBvZmZzZXQ9IjAuMjUiIHN0b3AtY29sb3I9IiNmOGYzY2UiLz48c3RvcCBvZmZzZXQ9IjAuOCIgc3RvcC1jb2xvcj0iI2E1NjgzMSIvPjxzdG9wIG9mZnNldD0iMC45OCIgc3RvcC1jb2xvcj0iIzk5NTYzOCIvPjwvcmFkaWFsR3JhZGllbnQ+PHJlY3QgeD0iMCUiIHk9IjAlIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjOTk1NjM4IiAvPjxyZWN0IHg9IjAlIiB5PSIwJSIgd2lkdGg9IjIwMCUiIGhlaWdodD0iMjAwJSIgZmlsbD0idXJsKCNnKSIgLz48L3N2Zz4=);
+    background-image: -webkit-gradient(radial, 100% 100%, 0, 100% 100%, 1225, color-stop(8.45%, #FCF9E4), color-stop(25%, #f8f3ce), color-stop(80%, #a56831), color-stop(98%, #995638));
+    background-image: -webkit-radial-gradient(right bottom, farthest-side, #FCF9E4 8.45%, #f8f3ce 25%, #a56831 80%, #995638 98%);
+    background-image: -moz-radial-gradient(right bottom, farthest-side, #FCF9E4 8.45%, #f8f3ce 25%, #a56831 80%, #995638 98%);
+    background-image: -ms-radial-gradient(right bottom, farthest-side, #FCF9E4 8.45%, #f8f3ce 25%, #a56831 80%, #995638 98%);
+    background-image: -o-radial-gradient(right bottom, farthest-side, #FCF9E4 8.45%, #f8f3ce 25%, #a56831 80%, #995638 98%);
+    background-image: radial-gradient(farthest-side at right bottom, #FCF9E4 8.45%, #f8f3ce 25%, #a56831 80%, #995638 98%);
 }
 
 #header {
