@@ -3,7 +3,7 @@ Kalefinder::Application.routes.draw do
   #get "home", to: "pages#home", as: "home"
   #get "inside", to: "pages#inside", as: "inside"
 
-  root "packages#index"
+  root "pages#home"
 
   devise_for :users
 
