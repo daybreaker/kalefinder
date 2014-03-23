@@ -7,7 +7,7 @@
   <script>var __adobewebfontsappname__ = "reflow"</script>
   <script src="http://use.edgefonts.net/open-sans:n7,i7,n8,i8,i4,n3,i3,n4,n6,i6:all.js"></script>
   <%= stylesheet_link_tag "application", media: "all" %>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyQ9sDh4UcAoAwG1v3Jrv4q9F_L2tGPY4&sensor=false&libraries=visualization"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_KEY"] %>&sensor=false&libraries=visualization"></script>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
