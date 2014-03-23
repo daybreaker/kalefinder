@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.0.1'
 gem 'jquery-rails', '~> 3.0.4'
 gem 'jbuilder', '~> 1.5.3'
 gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'yelpster'
 
 group :doc do
   gem 'sdoc', require: false
@@ -14,7 +15,6 @@ end
 
 # development gems
 group :development, :test do
-  gem 'yelpster'
   gem 'sqlite3', '~> 1.3.8'    # dev & test database
   gem 'figaro', '~> 0.7.0'     # env variables
 end
