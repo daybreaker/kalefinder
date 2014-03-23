@@ -111,6 +111,7 @@ module GooglePlaces
         print '.'
 
         result = GooglePlaces::DetailsSearch.new(key: key, reference: place['reference']).search
+        next if result.blank?
         result['catagories'] = place['catagories']
         result.delete('reviews') # we dont need this right now, just taking up space
         result.delete('adr_address')
