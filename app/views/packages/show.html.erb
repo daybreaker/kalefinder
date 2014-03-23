@@ -1,0 +1,19 @@
+<h1><%= @package.name %></h1>
+<p><%= @package.description %></p>
+
+<ol>
+  <% @places.each do |place| %>
+    <li><%= place.short_name %>
+  <% end %>
+</ol>
+
+<div id="map-canvas" style="width: 800px; height: 400px;"/>
+
+<script>
+  heatMapPoints = [
+    <% @places.each do |place| %>
+      <%= "{ location: new google.maps.LatLng(#{place.lat}, #{place.long}), weight: #{place.score(@package)}}," %>
+    <% end %>
+  ];
+</script>
+

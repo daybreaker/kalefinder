@@ -1,0 +1,15 @@
+<% @packages.each do |package| %>
+
+  <div id="body--groups" class="clearfix">
+    <div id="groups--img" class="clearfix">
+    </div>
+    <p id="groups-header">
+      <%= link_to package.name, package_path(package) %>
+    </p>
+    <p id="groups-paragraph">
+      <span id="groups-p"><%= package.description %></span><br />
+    </p>
+  </div>
+
+<% end %>
+

@@ -4,34 +4,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title><%= @title || "Kalefinder" %></title>
   <%= favicon_link_tag 'favicon.ico' %>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script>var __adobewebfontsappname__ = "reflow"</script>
+  <script src="http://use.edgefonts.net/open-sans:n7,i7,n8,i8,i4,n3,i3,n4,n6,i6:all.js"></script>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyQ9sDh4UcAoAwG1v3Jrv4q9F_L2tGPY4&sensor=false&libraries=visualization"></script>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="wrap">
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-      
-    <div class="container">
-       
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
-          <%= render 'layouts/messages' %>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-sm-12">
-          <%= yield %>
-        </div>     
-      </div>  
-      
+
+<div id="primaryContainer" class="primaryContainer clearfix">
+  <div id="header" class="clearfix">
+    <div id="header--container" class="clearfix">
+      <a id="header--logo_container" href="index.html" class="clearfix">
+      </a>
     </div>
   </div>
-    
-  <%= render 'layouts/footer' %>    
+  <div id="body--container" class="clearfix">
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>
