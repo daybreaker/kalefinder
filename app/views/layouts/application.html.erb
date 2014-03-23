@@ -19,7 +19,7 @@
       <%= link_to "", packages_path, :id => "header--logo_container", :class => "clearfix" %>
     </div>
   </div>
-  <div id="body--container" class="clearfix">
+  <div id="body--container" class="clearfix <%=controller_name + "-" + action_name %>">
     <%= yield %>
   </div>
 </div>
