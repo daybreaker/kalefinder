@@ -25,7 +25,7 @@ module GooglePlaces
                                                   key: key),
 
         cheap_food: GooglePlaces::RadarSearch.new(types: %w{food restraunt},
-                                                  maxprice: 2,
+                                                  maxprice: 1,
                                                   key: key),
 
         food: GooglePlaces::RadarSearch.new(types: %w{food restraunt},
@@ -33,7 +33,7 @@ module GooglePlaces
 
         cocktail_bar: GooglePlaces::RadarSearch.new(types: %w{bar},
                                                     keyword: 'cocktails',
-                                                    minprice: 3,
+                                                    minprice: 2,
                                                     key: key),
 
         bar: GooglePlaces::RadarSearch.new(types: %w{bar},
@@ -41,7 +41,7 @@ module GooglePlaces
 
         dive_bar: GooglePlaces::RadarSearch.new(types: %w{bar},
                                                 keyword: 'dive bar',
-                                                maxprice: 2,
+                                                maxprice: 1,
                                                 key: key),
 
         live_music: GooglePlaces::RadarSearch.new(types: %w{bar night_club},
@@ -113,6 +113,7 @@ module GooglePlaces
         result = GooglePlaces::DetailsSearch.new(key: key, reference: place['reference']).search
         result['catagories'] = place['catagories']
         result.delete('reviews') # we dont need this right now, just taking up space
+        result.delete('adr_address')
         results << result
       end
 
@@ -125,7 +126,7 @@ module GooglePlaces
       places = populate_details transpose_results(run_searches)
 
       puts "Writing output to #{output}."
-      File.open(output, 'w') { |f| f.write JSON.pretty_generate(places) }
+      File.open(output, 'w') { |f| f.write JSON.dump(places) }
     end
   end
 end
